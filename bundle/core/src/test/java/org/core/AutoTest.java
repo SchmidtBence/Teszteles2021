@@ -3,13 +3,11 @@ package org.core;
 import org.core.exceptions.AjtokSzamaNemMegfelelo;
 import org.core.exceptions.GyartasiIdoNemMegfelelo;
 import org.core.exceptions.RendszamNemMegfelelo;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.security.PublicKey;
 import java.time.LocalDate;
-
-import static org.junit.Assert.*;
 
 public class AutoTest {
     Auto testauto;
@@ -100,5 +98,18 @@ public class AutoTest {
     public void testKesoiGyartasIdo() throws GyartasiIdoNemMegfelelo{
         String gyartasido="1400-04-11";
         testauto.setGyartasiIdo(LocalDate.parse(gyartasido));
+    }
+
+    @Test
+    public void tesztSzinkodSetter() {
+        String szinkod="#FFFFFF";
+        testauto.setSzinHex(szinkod);
+        Assert.assertEquals(szinkod,testauto.szinHex);
+    }
+
+    @Test
+    public void testSzinkodGetter() {
+        testauto.szinHex ="#FFFFFF";
+        Assert.assertEquals(testauto.szinHex,testauto.getSzinHex());
     }
 }

@@ -1,4 +1,4 @@
-package org.core;
+package org.core.enums;
 
 public enum Kivitel {
 	KOMBI, SEDAN, CABRIO, LIMUZIN, CROSSOVER, SUV, MONSTER, COUPE, HATCHBACK, SPORT
